@@ -3,6 +3,7 @@
 // Application state
 let currentUser = null;
 let currentView = 'login';
+let currentSubject = null;
 let currentLessonId = null;
 let lessonProgress = JSON.parse(localStorage.getItem('lessonProgress')) || {};
 
@@ -11,6 +12,7 @@ const DEFAULT_PASSWORD = 'april';
 
 // Lesson data
 const lessonsData = {
+    // Contemporary Arts lessons
     'lesson-1': {
         title: 'Humanities and Contemporary Art',
         content: [
@@ -281,6 +283,246 @@ const lessonsData = {
             { type: 'heading', content: 'CINEMA' },
             { type: 'definition', content: 'most popular of the art forms. 1900\'s in manila' }
         ]
+    },
+    // Filipino sa Piling Larang lessons
+    'filipino-1': {
+        title: 'Akademiko at Di-Akademikong Teksto',
+        content: [
+            { type: 'heading', content: 'AKADEMIKO' },
+            { type: 'list', content: 'Katangian ng Akademikong Teksto', items: [
+                'Katiwa-tiwala',
+                'May sapat na ebidensya',
+                'Katotohanan'
+            ]},
+            { type: 'heading', content: 'DI-AKADEMIKO' },
+            { type: 'list', content: 'Katangian ng Di-Akademikong Teksto', items: [
+                'Sarilining opinyon'
+            ]},
+            { type: 'heading', content: 'URI NG TEKSTO NA BABASAHIN SA KOLEHIYO' },
+            { type: 'text', content: '1. TEKSTONG PAMPANITIKAN' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Tula',
+                'Dula',
+                'Sanaysayasay',
+                'Maikling kwento',
+                'Telenobela',
+                'Pelikula',
+                'Artikulo ng panunring pampanitikan',
+                'At iba pa'
+            ]},
+            { type: 'text', content: '2. TEKSTONG PAMBROADCAST' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Artikulo sa diyaryo',
+                'Balita',
+                'Report sa radyo, telebisyon, at tabloid',
+                'Interbyu',
+                'Programa',
+                'Editorial',
+                'Datos sa social media'
+            ]},
+            { type: 'text', content: '3. PISIKA' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Resulta ng experiment',
+                'Siyentipikong report'
+            ]},
+            { type: 'text', content: '4. SINING' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Akdang pansining',
+                'Rebuy ng akdang pansining'
+            ]},
+            { type: 'text', content: '5. ANTROPOLOHIYA' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Case study ng isang komunidad',
+                'Artikulo/libro ng pag-aaral ng isang pangkat etniko',
+                'Interbyu sa isang komunidad'
+            ]},
+            { type: 'text', content: '6. SIKOLOHIYA' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Eksperimento sa laboratory',
+                'Case study',
+                'Siyentipikong report'
+            ]},
+            { type: 'text', content: '7. LINGGWISTIKA' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'Analisis ng grammar sa wika',
+                'Pag-aaral ng diksyunaryo at bokabularyo ng isang wika'
+            ]}
+        ]
+    },
+    'filipino-2': {
+        title: 'Mapanuring Pagsusulat sa Akademiya',
+        content: [
+            { type: 'heading', content: 'MAPANURING PAGSUSULAT SA AKADEMIYA: PAGBUO NG MAPANURING PAGBASA' },
+            { type: 'heading', content: 'KATANGIAN' },
+            { type: 'list', content: 'Mga Katangian ng Mapanuring Pagsusulat', items: [
+                'Layunin',
+                'Tono',
+                'Batayan ng datos',
+                'Balangkas ng kaisipan',
+                'Perspektibo',
+                'Target na mambabasa'
+            ]},
+            { type: 'heading', content: 'ESTRUKTURA AT PROSESO NG MAPANURING PAGSULAT' },
+            { type: 'text', content: '1. INTRODUKSYON' },
+            { type: 'text', content: 'a. Pagpapatunay bilang pokus o tesis ng pag-aaral' },
+            { type: 'list', content: 'Uri ng Tesis', items: [
+                'Fact or opinion',
+                'Opinion',
+                'Sanhi at bunga',
+                'Halaga',
+                'Solusyon at patakaran'
+            ]},
+            { type: 'text', content: 'b. Paksang pangungusap' },
+            { type: 'text', content: 'c. Atensyon sa simula' },
+            { type: 'list', content: 'Mga Paraan ng Pagkuha ng Atensyon', items: [
+                'Tanong',
+                'Impormasyon',
+                'Depinisyon',
+                'Sipi'
+            ]},
+            { type: 'text', content: '2. KATAWAN' },
+            { type: 'text', content: 'a. EBIDENSIYA' },
+            { type: 'list', content: 'Uri ng Ebidensya', items: [
+                'Pangunahin – Interbyu, karanasan, serbey, anekdota, eksperimento',
+                'Di-pangunahin – teksto, libro, artikulo, pahayagan'
+            ]},
+            { type: 'text', content: 'b. ARGUMENTO - Nagpapaliwanag kung bakit sumusuporta ang datos sa gusting patunayan o tesis' },
+            { type: 'list', content: 'Mga Bahagi ng Argumento', items: [
+                'Datos',
+                'Estraktura',
+                'Detalye',
+                'Impormasyon',
+                'Testimonya',
+                'Sipi',
+                'Anekdota'
+            ]},
+            { type: 'text', content: 'c. PAGBUBUO' },
+            { type: 'list', content: 'Mga Dapat Isaalang-alang', items: [
+                'Pagsisimula ng bagong talata',
+                'Transisyon',
+                'Haba ng talata',
+                'Pagbubuo ng pangungusap - iba-ibahin ang uri at anyo',
+                'Payak, tambalan, ugnayan',
+                'Paggamit ng iba\'t-ibang uri ng pangungusap'
+            ]},
+            { type: 'text', content: '3. KONKLUSYON' },
+            { type: 'list', content: 'Mga Paraan ng Pagwawakas', items: [
+                'PARAPHRASE',
+                'RESOLUSYON'
+            ]}
+        ]
+    },
+    'filipino-3': {
+        title: 'Etika at Pagpapahalaga sa Akademiya',
+        content: [
+            { type: 'heading', content: 'ETIKA AT PAGPAPAHALAGA SA AKADEMIYA: PAGSULAT NG PERSPEKTIBONG SANAYSAY' },
+            { type: 'definition', content: 'ETIKA (values/ethics) – ETHOS – ETHICOS (karakter)' },
+            { type: 'text', content: 'CHRIS NEWTON – konsepto ng tama o mali; Mabuti at masama.' },
+            { type: 'heading', content: 'MGA ISYU SA ETIKA SA PAGSUSULAT' },
+            { type: 'text', content: 'a. COPYRIGHT' },
+            { type: 'definition', content: 'Tukuyin ang may akda o kung saan nanggaling ang datos.' },
+            { type: 'text', content: 'b. PLAGIARISM' },
+            { type: 'list', content: 'Mga Anyo ng Plagiarism', items: [
+                'Pagnanakaw ng ideya',
+                'Hindi nabanggit ang may akda ng sinipi',
+                'Hindi paglalagay ng panipi sa hiniram na pahayag',
+                'Hindi ginamitan ng sariling pananalita ang akdang binuod at hinilaw'
+            ]},
+            { type: 'text', content: 'c. PAGHUHUBAD NG DATOS' },
+            { type: 'list', content: 'Mga Anyo ng Paghuhubad', items: [
+                'Imbensyon ng datos',
+                'Sinadyang di paglalagay ng ilang datos',
+                'Pagbabago o modipikasyon ng datos'
+            ]},
+            { type: 'heading', content: 'ETIKA' },
+            { type: 'list', content: 'Mga Katangian', items: [
+                'LIPUNAN',
+                'TAMA O MALI (TANGGAP O DI-TANGGAP)',
+                'PRAKTIS O KILOS',
+                'TAO, GRUPO, KOMUNIDAD',
+                'OBLIGASYON, KARAPATAN, KATUWIRAN, AT HALAGA'
+            ]},
+            { type: 'heading', content: 'PAGPAPAHALAGA' },
+            { type: 'list', content: 'Mga Katangian', items: [
+                'TAO O GRUPO',
+                'STANDARD AT PANINIWALA',
+                'PRAKTIS O KILOS',
+                'KAPWA'
+            ]},
+            { type: 'heading', content: 'PANGKALAHATANG PAGPAPAHALAGA' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'COMPETENCY',
+                'INTEGRIDAD',
+                'DIGNIDAD',
+                'KATAPATAN',
+                'PAGKAKAWANG-GAWA',
+                'SEGURIDAD',
+                'DIBERSIDAD',
+                'PAGKATUTO',
+                'IMPLUWENSIYA',
+                'RESPONSIBILIDAD',
+                'SERBISYO',
+                'PAGGALANG',
+                'KATAPANGAN',
+                'KAGALINGAN',
+                'KOLABORASYON',
+                'TEAM WORK',
+                'DEDIKASYON',
+                'PAGKAKAIBIGAN',
+                'PAGPAPAUNLAD',
+                'KATARUNGAN',
+                'PLEKSIBILIDAD',
+                'PANANALIG',
+                'DISIPLINA',
+                'MALAYANG PAG IISIP',
+                'PAG-ASA',
+                'KASIYAHAN',
+                'AMBISYON',
+                'PAGTITIWALA',
+                'INOBASYON'
+            ]},
+            { type: 'heading', content: 'PAGPAPAHALAGAN PILIPINO' },
+            { type: 'list', content: 'Mga Katangiang Pilipino', items: [
+                'PAGMAMAHAL AT KATAPATAN SA PAMILYA',
+                'PAGPAPAHALAGA SA EDUKASYON',
+                'HIYA O KAHIHIYAN',
+                'PAKIKIPAGKAPWA',
+                'PAGIGING MAPAMARAAN',
+                'PAGKA-MALIKHAIN',
+                'SIKAP AT TIYAGA',
+                'UTANG NA LOOB',
+                'PAKIKISAMA',
+                'BAHALA NA'
+            ]},
+            { type: 'heading', content: 'PAGPAPAHALAGANG INTELEKTWAL AT MORAL' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'KABABAANG LOOB',
+                'LAKAS NG LOOB',
+                'PAKIKIISA',
+                'INTEGRIDAD',
+                'PAGSISIKHAY/DI SUMUKO',
+                'PAGKAMATARUNGAN',
+                'MAPANURI',
+                'PAG AATUBILI',
+                'HIYA/KAHIHIYAN',
+                'BAHALA NA'
+            ]},
+            { type: 'heading', content: 'KASO NG PANDARAYA/ PAANO MAG KAKASO' },
+            { type: 'list', content: 'Mga Paraan', items: [
+                'MARAMI ANG KINOPYA',
+                'MAG SUMITE NG GROUP PAPER'
+            ]},
+            { type: 'heading', content: 'KILALANG TAO NA NAGNAKAW AT NANGOPYA' },
+            { type: 'list', content: 'Mga Halimbawa', items: [
+                'DAN BROWN - THE DA VINCI LEGACY (1983), DAUGHTER OF GOD (2000), NAKALAYA(2005)',
+                'HELLEN KELLER - THE FROST FAIRY(1982), MARGARETH CANBY',
+                'MARTIN LUTHER KING JR. - THESIS SA DOCTORAL (1950), BOSTON UNIVERSITY',
+                'OSAMA BIN LADEN - YUSUF ABU',
+                'SENADOR (PH) - TALUMPATI SA REPRODUCTIVE HEALTH BILL (2012)',
+                'NEGOSYANTE AT CHAIRMAN NG BOARD OF TRUSTIES SA METRO MANILA - TALUMPATI, CEREMONIAL NG PAGTATAPOS',
+                'PEDRO SERRANO LAKTAW - DICCIONARIONG KASTILA-TAGALOG (1889), LA UNION'
+            ]}
+        ]
     }
 };
 
@@ -322,7 +564,18 @@ function setupEventListeners() {
     
     const backToSubject = document.getElementById('backToSubject');
     if (backToSubject) {
-        backToSubject.addEventListener('click', () => showView('subjectView'));
+        backToSubject.addEventListener('click', () => {
+            if (currentSubject === 'contemporary-arts') {
+                showView('artsSubjectView');
+            } else if (currentSubject === 'filipino') {
+                showView('filipinoSubjectView');
+            }
+        });
+    }
+    
+    const backToDashboardFilipino = document.getElementById('backToDashboardFilipino');
+    if (backToDashboardFilipino) {
+        backToDashboardFilipino.addEventListener('click', () => showView('dashboard'));
     }
     
     // Search functionality
@@ -428,11 +681,13 @@ function showMainApp() {
 function showView(view) {
     // Hide all views
     const dashboard = document.getElementById('dashboard');
-    const subjectView = document.getElementById('subjectView');
+    const artsSubjectView = document.getElementById('artsSubjectView');
+    const filipinoSubjectView = document.getElementById('filipinoSubjectView');
     const lessonView = document.getElementById('lessonView');
     
     if (dashboard) dashboard.classList.add('hidden');
-    if (subjectView) subjectView.classList.add('hidden');
+    if (artsSubjectView) artsSubjectView.classList.add('hidden');
+    if (filipinoSubjectView) filipinoSubjectView.classList.add('hidden');
     if (lessonView) lessonView.classList.add('hidden');
     
     // Show selected view
@@ -444,14 +699,20 @@ function showView(view) {
     currentView = view;
     
     // Update progress when showing dashboard or subject view
-    if (view === 'dashboard' || view === 'subjectView') {
+    if (view === 'dashboard' || view === 'artsSubjectView' || view === 'filipinoSubjectView') {
         updateProgress();
     }
 }
 
 function openSubject(subjectId) {
-    showView('subjectView');
-    updateLessonCards();
+    currentSubject = subjectId;
+    if (subjectId === 'contemporary-arts') {
+        showView('artsSubjectView');
+        updateLessonCards();
+    } else if (subjectId === 'filipino') {
+        showView('filipinoSubjectView');
+        updateFilipinoLessonCards();
+    }
 }
 
 function openLesson(lessonId) {
@@ -485,8 +746,13 @@ function loadLessonContent(lessonId) {
     
     if (lessonTitle) lessonTitle.textContent = lesson.title;
     if (lessonNumber) {
-        const number = parseInt(lessonId.split('-')[1]);
-        lessonNumber.textContent = `Lesson ${number} of 4`;
+        if (lessonId.startsWith('filipino-')) {
+            const number = parseInt(lessonId.split('-')[1]);
+            lessonNumber.textContent = `Aralin ${number} of 3`;
+        } else {
+            const number = parseInt(lessonId.split('-')[1]);
+            lessonNumber.textContent = `Lesson ${number} of 4`;
+        }
     }
     
     // Update lesson content
@@ -617,7 +883,7 @@ function goToNextLesson() {
 }
 
 function updateProgress() {
-    const totalLessons = 4;
+    const totalLessons = 7; // 4 Contemporary Arts + 3 Filipino
     const completedLessons = Object.values(lessonProgress).filter(p => p.completed).length;
     const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
     
@@ -630,12 +896,27 @@ function updateProgress() {
     if (overallPercentage) overallPercentage.textContent = `${Math.round(progressPercentage)}%`;
     if (overallProgressBar) overallProgressBar.style.width = `${progressPercentage}%`;
     
-    // Update subject progress
-    const subjectProgress = document.getElementById('subjectProgress');
-    const subjectProgressBar = document.getElementById('subjectProgressBar');
+    // Update Contemporary Arts subject progress
+    const artsCompletedLessons = ['lesson-1', 'lesson-2', 'lesson-3', 'lesson-4']
+        .filter(id => lessonProgress[id]?.completed).length;
+    const artsProgressPercentage = (artsCompletedLessons / 4) * 100;
     
-    if (subjectProgress) subjectProgress.textContent = `${completedLessons}/${totalLessons}`;
-    if (subjectProgressBar) subjectProgressBar.style.width = `${progressPercentage}%`;
+    const subjectProgressArts = document.getElementById('subjectProgressArts');
+    const subjectProgressBarArts = document.getElementById('subjectProgressBarArts');
+    
+    if (subjectProgressArts) subjectProgressArts.textContent = `${artsCompletedLessons}/4`;
+    if (subjectProgressBarArts) subjectProgressBarArts.style.width = `${artsProgressPercentage}%`;
+    
+    // Update Filipino subject progress
+    const filipinoCompletedLessons = ['filipino-1', 'filipino-2', 'filipino-3']
+        .filter(id => lessonProgress[id]?.completed).length;
+    const filipinoProgressPercentage = (filipinoCompletedLessons / 3) * 100;
+    
+    const subjectProgressFilipino = document.getElementById('subjectProgressFilipino');
+    const subjectProgressBarFilipino = document.getElementById('subjectProgressBarFilipino');
+    
+    if (subjectProgressFilipino) subjectProgressFilipino.textContent = `${filipinoCompletedLessons}/3`;
+    if (subjectProgressBarFilipino) subjectProgressBarFilipino.style.width = `${filipinoProgressPercentage}%`;
 }
 
 function updateLessonCards() {
@@ -655,6 +936,28 @@ function updateLessonCards() {
             } else {
                 statusIcon.className = 'fas fa-circle lesson-incomplete';
                 badge.textContent = 'Start';
+            }
+        }
+    }
+}
+
+function updateFilipinoLessonCards() {
+    for (let i = 1; i <= 3; i++) {
+        const lessonId = `filipino-${i}`;
+        const progress = lessonProgress[lessonId];
+        const statusIcon = document.getElementById(`filipino${i}Status`);
+        const badge = document.getElementById(`filipino${i}Badge`);
+        
+        if (statusIcon && badge) {
+            if (progress?.completed) {
+                statusIcon.className = 'fas fa-check-circle lesson-complete';
+                badge.textContent = 'Tingnan Muli';
+            } else if (progress?.accessed) {
+                statusIcon.className = 'fas fa-clock lesson-progress';
+                badge.textContent = 'Ituloy';
+            } else {
+                statusIcon.className = 'fas fa-circle lesson-incomplete';
+                badge.textContent = 'Simulan';
             }
         }
     }
