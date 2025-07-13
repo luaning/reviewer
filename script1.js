@@ -350,11 +350,75 @@ const lessonsData = {
         ]
     },
     'filipino-2': {
-        title: 'Mapanuring Pagsusulat sa Akademiya',
+        title: 'Estruktura ng Tekstong Akademiko',
         content: [
-            { type: 'heading', content: 'MAPANURING PAGSUSULAT SA AKADEMIYA: PAGBUO NG MAPANURING PAGBASA' },
+            { type: 'heading', content: 'ESTRUKTURA NG TEKSTONG AKADEMIKO' },
+            { type: 'text', content: 'DESKRIPSYON NG PAKSA (R.T. YU at R. TOLENTINO)' },
+            { type: 'list', content: 'Mga Elemento', items: [
+                'Depinisyon, paglilinaw, at pagpapaliwanag',
+                'Makikita sa simula'
+            ]},
+            { type: 'text', content: 'PROBLEMA AT SOLUSYON (P.C. RODRIGUEZ)' },
+            { type: 'list', content: 'Mga Elemento', items: [
+                'Tinutukoy ang pinaktamang teksto at punto ng paksa',
+                'Dito naikot ang pagtatalakay sa buong teksto'
+            ]},
+            { type: 'text', content: 'SANHI AT BUNGA (Z. SALAZAR)' },
+            { type: 'definition', content: 'Ginagamit na batayan ng ebidensya at katuwiran ng teksto' },
+            { type: 'text', content: 'PAGKUKUMPARA (V. NOFUENTO)' },
+            { type: 'definition', content: 'Paghahambing sa mga datos upang patibayin ang katuwiran' },
+            { type: 'text', content: 'APLIKASYON (R. TOLENTINO)' },
+            { type: 'definition', content: 'Inuugnay ang paksa at ideya sa tunay na buhay' },
+            { type: 'text', content: 'PAGKAKASUNOD-SUNOD (L.G.T. ROBIN)' },
+            { type: 'definition', content: 'Upang maging malinaw ang daloy ng teksto' },
+            { type: 'heading', content: 'PARTIKULAR NA ESTRUKTURA NG TEKSTONG AKADEMIKO' },
+            { type: 'text', content: 'THESIS' },
+            { type: 'list', content: 'Mga Bahagi', items: [
+                'INTRODUKSYON - Paksang pangungusap',
+                'KATAWAN - Paksang talata, detalye, argumento, katuwiran',
+                'KONKLUSYON - Argumentong konklusyon'
+            ]},
+            { type: 'text', content: 'PROBLEMA AT SOLUSYON' },
+            { type: 'list', content: 'Mga Bahagi', items: [
+                'INTRODUKSYON - Pahayag ng problema o solusyon',
+                'KATAWAN - Detalye, ebidensya, katuwiran, posibleng solusyon',
+                'KONKLUSYON - Resolusyon/mungkahing solusyon o kawalan ng solusyon'
+            ]},
+            { type: 'text', content: 'FACTUAL REPORT' },
+            { type: 'list', content: 'Mga Bahagi', items: [
+                'INTRODUKSYON - Pangunahing paksa',
+                'KATAWAN - Detalye, paliwanag',
+                'KONKLUSYON - Pangkalahatang buod'
+            ]},
+            { type: 'heading', content: 'MAPANURING PAGBABASA AT ISTRATEHIYA' },
+            { type: 'list', content: 'Mga Katangian', items: [
+                'MAINGAT',
+                'AKTIBO',
+                'REPLEKTIBO',
+                'MAPAMARAAN'
+            ]},
+            { type: 'list', content: 'Mga Estratehiya', items: [
+                'PRE-VIEWING',
+                'PRE-READING',
+                'SKIMMING',
+                'BRAINSTORMING',
+                'METAKOGNITIBONG PAGBASA'
+            ]},
+            { type: 'heading', content: 'MGA PANANAW SA PAGBASA' },
+            { type: 'list', content: 'Mga Pananaw', items: [
+                'TRADISYONAL NA PANANAW (PATRICK, 1972)',
+                'PANANAW NA KOGNITIBO (GOODMAN, 1990)',
+                'METAKOGNITIBONG PANANAW (KLEIN, 2004)'
+            ]}
+        ]
+    },
+    'filipino-3': {
+        title: 'Etika at Pagpapahalaga sa Akademiya',
+        content: [
+            { type: 'heading', content: 'MAPANURING PAGSUSULAT SA AKADEMIYA' },
+            { type: 'text', content: 'PAGBUO NG MAPANURING PAGBASA' },
             { type: 'heading', content: 'KATANGIAN' },
-            { type: 'list', content: 'Mga Katangian ng Mapanuring Pagsusulat', items: [
+            { type: 'list', content: 'Mga Katangian', items: [
                 'Layunin',
                 'Tono',
                 'Batayan ng datos',
@@ -363,31 +427,37 @@ const lessonsData = {
                 'Target na mambabasa'
             ]},
             { type: 'heading', content: 'ESTRUKTURA AT PROSESO NG MAPANURING PAGSULAT' },
-            { type: 'text', content: '1. INTRODUKSYON' },
-            { type: 'text', content: 'a. Pagpapatunay bilang pokus o tesis ng pag-aaral' },
-            { type: 'list', content: 'Uri ng Tesis', items: [
+            { type: 'text', content: 'INTRODUKSYON' },
+            { type: 'list', content: 'Mga Elemento', items: [
+                'Pagpapatunay bilang pokus o tesis ng pag-aaral',
                 'Fact or opinion',
                 'Opinion',
                 'Sanhi at bunga',
                 'Halaga',
-                'Solusyon at patakaran'
-            ]},
-            { type: 'text', content: 'b. Paksang pangungusap' },
-            { type: 'text', content: 'c. Atensyon sa simula' },
-            { type: 'list', content: 'Mga Paraan ng Pagkuha ng Atensyon', items: [
+                'Solusyon at patakaran',
+                'Paksang pangugusap',
+                'Atensyon sa simula',
                 'Tanong',
                 'Impormasyon',
                 'Depinisyon',
                 'Sipi'
             ]},
-            { type: 'text', content: '2. KATAWAN' },
-            { type: 'text', content: 'a. EBIDENSIYA' },
-            { type: 'list', content: 'Uri ng Ebidensya', items: [
-                'Pangunahin – Interbyu, karanasan, serbey, anekdota, eksperimento',
-                'Di-pangunahin – teksto, libro, artikulo, pahayagan'
+            { type: 'text', content: 'KATAWAN' },
+            { type: 'list', content: 'EBIDENSIYA - Pangunahin', items: [
+                'Interbyu',
+                'Karanasan',
+                'Serbey',
+                'Anekdota',
+                'Eksperimento'
             ]},
-            { type: 'text', content: 'b. ARGUMENTO - Nagpapaliwanag kung bakit sumusuporta ang datos sa gusting patunayan o tesis' },
-            { type: 'list', content: 'Mga Bahagi ng Argumento', items: [
+            { type: 'list', content: 'EBIDENSIYA - Di-pangunahin', items: [
+                'Teksto',
+                'Libro',
+                'Artikulo',
+                'Pahayagan'
+            ]},
+            { type: 'text', content: 'ARGUMENTO - Nagpapaliwanag kung bakit sumusuporta ang datos sa gusting patunayan o tesis' },
+            { type: 'list', content: 'Mga Elemento ng Argumento', items: [
                 'Datos',
                 'Estraktura',
                 'Detalye',
@@ -396,28 +466,14 @@ const lessonsData = {
                 'Sipi',
                 'Anekdota'
             ]},
-            { type: 'text', content: 'c. PAGBUBUO' },
-            { type: 'list', content: 'Mga Dapat Isaalang-alang', items: [
-                'Pagsisimula ng bagong talata',
-                'Transisyon',
-                'Haba ng talata',
-                'Pagbubuo ng pangungusap - iba-ibahin ang uri at anyo',
-                'Payak, tambalan, ugnayan',
-                'Paggamit ng iba\'t-ibang uri ng pangungusap'
-            ]},
-            { type: 'text', content: '3. KONKLUSYON' },
-            { type: 'list', content: 'Mga Paraan ng Pagwawakas', items: [
+            { type: 'text', content: 'KONKLUSYON' },
+            { type: 'list', content: 'Mga Elemento', items: [
                 'PARAPHRASE',
                 'RESOLUSYON'
-            ]}
-        ]
-    },
-    'filipino-3': {
-        title: 'Etika at Pagpapahalaga sa Akademiya',
-        content: [
-            { type: 'heading', content: 'ETIKA AT PAGPAPAHALAGA SA AKADEMIYA: PAGSULAT NG PERSPEKTIBONG SANAYSAY' },
-            { type: 'definition', content: 'ETIKA (values/ethics) – ETHOS – ETHICOS (karakter)' },
-            { type: 'text', content: 'CHRIS NEWTON – konsepto ng tama o mali; Mabuti at masama.' },
+            ]},
+            { type: 'heading', content: 'ETIKA AT PAGPAPAHALAGA SA AKADEMIYA' },
+            { type: 'text', content: 'ETIKA (values/ethics) – ETHOS – ETHICOS (karakter)' },
+            { type: 'definition', content: 'CHRIS NEWTON – konsepto ng tama o mali; Mabuti at masama' },
             { type: 'heading', content: 'MGA ISYU SA ETIKA SA PAGSUSULAT' },
             { type: 'text', content: 'a. COPYRIGHT' },
             { type: 'definition', content: 'Tukuyin ang may akda o kung saan nanggaling ang datos.' },
