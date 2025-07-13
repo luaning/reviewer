@@ -7,7 +7,7 @@ let currentLessonId = null;
 let lessonProgress = JSON.parse(localStorage.getItem('lessonProgress')) || {};
 
 // Default password
-const DEFAULT_PASSWORD = 'reviewerkotoakinlangto';
+const DEFAULT_PASSWORD = 'reviewer koto akin lang to';
 
 // Lesson data
 const lessonsData = {
